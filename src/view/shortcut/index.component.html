@@ -37,26 +37,12 @@
         (mouseover)="handleMouseOver($event)"
         (mouseleave)="handleMouseLeave($event)"
       >
-        <div
-          *ngFor="
-            let item of dockList;
-            let idx = index;
-            trackBy: trackByItemWeb
-          "
-          nz-tooltip
-          [nzTooltipTitle]="item['__name__'] || item['name']"
-          class="dock-item"
-          [attr.data-index]="idx"
-          (click)="jumpService.goUrl($event, item['url'])"
-        >
-      
         
-        </div>
       </span>
     </div>
   </div>
 </div>
-
+<app-fixbar [showCollapse]="false" [showTop]="false" />
 <iframe
   *ngIf="settings.shortcutThemeShowWeather"
   [hidden]="!frameLoad"
